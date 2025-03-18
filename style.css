@@ -1,0 +1,288 @@
+/* Basic Styling */
+html,
+body {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  background: #fff;
+  transition: background 0.3s ease;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* typing animation */
+.typewriter {
+  color: transparent;
+  background: linear-gradient(180deg, #00ffcc, #e442e4);
+  background-clip: text;
+  font-family: "Courier New", monospace;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #00ffcc; /* Cursor style */
+  animation: typing 3s steps(20, end) infinite alternate-reverse,
+    blink-cursor 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20ch; /* Adjust based on text length */
+  }
+}
+
+@keyframes blink-cursor {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00ffcc; /* Blinking cursor color */
+  }
+}
+
+/* nav hover effect */
+ul {
+  margin: 20px 0;
+  display: flex;
+  gap: 30px;
+}
+li {
+  position: relative;
+  list-style: none;
+  padding: 5px 0;
+  cursor: pointer;
+}
+li::after {
+  content: "";
+  background: #000;
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease-in-out;
+}
+li:hover::after {
+  width: 100%;
+}
+
+/* blinkg animation */
+.blinking span {
+  width: 10px;
+  height: 10px;
+  background: blue;
+  border-radius: 50%;
+  margin: 0px 3px;
+  display: inline-block;
+  animation: blink 1s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+}
+
+.blinking span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.blinking span:nth-child(2) {
+  animation-delay: -0.15s;
+}
+.blinking span:nth-child(3) {
+  animation-delay: -0.9s;
+}
+
+/* button size adjust effect */
+
+.button-container {
+  margin: 30px 0;
+  font-size: 18px;
+  container-type: inline-size;
+  container-name: btn;
+  width: 8rem;
+  background: #000;
+  color: white;
+  border-radius: 0.3rem;
+  padding: 10px 0px;
+  text-align: center;
+  resize: horizontal;
+  overflow: auto;
+}
+.button span {
+  color: #ff2828;
+}
+.button i {
+  display: none;
+  opacity: 0;
+  color: #ff2828;
+  font-size: 16px;
+}
+@container btn (max-width: 6rem) {
+  .button span {
+    display: none;
+    opacity: 0;
+  }
+  .button i {
+    display: inline-block;
+    opacity: 1;
+  }
+}
+
+/* gradient text color animation */
+.text {
+  margin: 30px 0;
+  font-family: serif;
+  background: linear-gradient(
+    45deg,
+    red,
+    blue,
+    rgba(231, 11, 231, 0.815),
+    rgb(9, 255, 0)
+  );
+  background-clip: text;
+  color: transparent;
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+/* btn content animation */
+.btn {
+  padding: 10px 25px;
+  font-size: 18px;
+  position: relative;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.btn::after {
+  content: "Go";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgb(254, 155, 42);
+  transition: width 0.3s ease-in-out;
+}
+.btn:hover::after {
+  width: 35%;
+  opacity: 1;
+}
+/* .btn::after{
+    content: "hover";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgb(254, 155, 42);
+    transition: height 0.5s ease-in-out;
+    }
+    .btn:hover::after{
+    height: 100%;
+    opacity: 1;
+    }
+     */
+/* textbg animation */
+
+/* btn inner color animation */
+.h2 {
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  background: linear-gradient(to left, #000, #ff2f93);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position-x: right;
+  display: inline-block;
+  transition: background-size 500ms;
+}
+.h2:hover {
+  color: white;
+  background-size: 100% 100%;
+  background-position-x: left;
+}
+
+/* input btn animation */
+.switch input {
+  appearance: none;
+  position: absolute;
+}
+.switch span {
+  display: block;
+  background-color: #ddd;
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+.span::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  text-align: center;
+  background-color: white;
+  border-radius: 50%;
+  margin: 2px;
+  transition: 0.3s;
+}
+.switch input:checked + .span {
+  background-color: #4ecdc4;
+}
+.switch input:checked + .span::before {
+  transform: translateX(20px);
+}
+body:has(.switch input:checked) {
+  background-color: #212121;
+}
+
+/* loader animation */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 8px solid;
+  border-radius: 50%;
+  border-color: transparent red;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

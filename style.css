@@ -280,7 +280,7 @@ h3:hover #line2 {
   border: 2px solid black;
   padding: 10px 20px;
   border-radius: 0.5rem;
-  background: linear-gradient(to left, #000, #ff2f93);
+  background: linear-gradient(to left, #000, #000);
   background-repeat: no-repeat;
   background-size: 0% 100%;
   background-position-x: right;
